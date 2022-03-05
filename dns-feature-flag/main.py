@@ -2,7 +2,6 @@ import dns.resolver
 import os
 
 DNS_FEATURE_FLAG_BASE_DOMAIN = os.environ['DNS_FEATURE_FLAG_BASE_DOMAIN']
-LOOP_SLEEP_DURATION = 1
 
 
 def read_flag(name, feature_flag_base_domain=DNS_FEATURE_FLAG_BASE_DOMAIN):
