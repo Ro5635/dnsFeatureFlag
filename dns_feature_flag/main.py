@@ -1,7 +1,15 @@
 import dns.resolver
 import os
 
-DNS_FEATURE_FLAG_BASE_DOMAIN = os.environ['DNS_FEATURE_FLAG_BASE_DOMAIN']
+
+def _get_default_base_domain():
+    try:
+        return os.environ['DNS_FEATURE_FLAG_BASE_DOMAIN']
+    except KeyError:
+        return None
+
+
+DNS_FEATURE_FLAG_BASE_DOMAIN = _get_default_base_domain()
 
 
 def is_flag_enabled(name, feature_flag_base_domain=DNS_FEATURE_FLAG_BASE_DOMAIN):
