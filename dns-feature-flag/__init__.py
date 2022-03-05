@@ -1,1 +1,1 @@
-from .main import read_flag
+from .main import is_flag_enabled
